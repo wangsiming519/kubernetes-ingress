@@ -46,3 +46,23 @@ Follow steps 1-3 of the [complete example](../complete-example/README.md) to dep
 1. Open Jaeger dashboard in your browser available via http://localhost:16686. Search for the traces by specifying the name of the service to `nginx-ingress` and clicking `Find Traces`. You will see:
 
 ![Jaeger UI](./jaeger-ui.png)
+
+
+
+# Quick Demo App
+There is a quick demo app which use nginx sample
+
+```
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f demo-ingress.yaml
+```
+
+And you can use below command to check 
+```
+IC_IP=<your ingress svc IP>
+IC_HTTPS_PORT=80
+curl --resolve nginx.kube.com:$IC_HTTPS_PORT:$IC_IP http://nginx.kube.com
+```
+
+Then follow Step2 above to deploy Jaeger all-in-one testing application 
+then forward the port to your local computer. 
