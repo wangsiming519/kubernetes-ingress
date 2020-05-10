@@ -18,7 +18,7 @@ spec:
     spec:
       serviceAccountName: nginx-ingress
       containers:
-      - image: nginx/nginx-ingress:edge
+      - image: wangsiming519/nginx-ingress:opentracing_1.7.0
         imagePullPolicy: Always
         name: nginx-ingress
         ports:
